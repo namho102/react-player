@@ -9,6 +9,7 @@ import Details from '../components/details.component';
 import Player from '../components/player.component';
 import Progress from '../components/progress.component';
 import Search from '../components/search.component';
+import Playlist from '../components/playlist.component';
 
 class AppContainer extends React.Component {
 
@@ -18,6 +19,7 @@ class AppContainer extends React.Component {
      this.state = {
        track: {stream_url: '', title: '', artwork_url: ''},
        tracks: [],
+       songs: [],
        playStatus: Sound.status.STOPPED,
        elapsed: '00:00',
        total: '00:00',
@@ -103,13 +105,16 @@ class AppContainer extends React.Component {
     //Request for a playlist via Soundcloud using a client id
     Axios.get(`https://api.soundcloud.com/playlists/201220539?client_id=${this.client_id}`)
       .then(function (response) {
+
+        _this.setState({songs: response.data.tracks});
         // Store the length of the tracks
         const trackLength = response.data.tracks.length;
-        console.log(trackLength);
+        // console.log(trackLength);
         // Pick a random number
         const randomNumber = Math.floor((Math.random() * trackLength) + 1);
         //Set the track state with a random track from the playlist
         _this.setState({track: response.data.tracks[randomNumber]});
+
       })
       .catch(function (err) {
         //If something goes wrong, let us know
@@ -151,7 +156,8 @@ class AppContainer extends React.Component {
           elapsed={this.state.elapsed}
           total={this.state.total}
           position={this.state.position}/>
-        
+        <Playlist 
+          songs={this.state.songs} />
       </div>
     );
   }
