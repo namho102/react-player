@@ -7,14 +7,10 @@ class Playlist extends React.Component {
   }
   
   callbackClick(key) {
+    this.props.playlistHandle(key);
     console.log(key);
   }
-  
-  handleClick(event) {
-    // console.log('You clicked: ' + props.items[i]);
-    console.log(event);
-  }
-  
+    
   render(){
     return(
       <div className="playlist">

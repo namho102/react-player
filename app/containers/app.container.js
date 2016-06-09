@@ -123,6 +123,32 @@ class AppContainer extends React.Component {
       });
    }
 
+   chooseTrack(key) {
+    let _this = this;
+    //Request for a playlist via Soundcloud using a client id
+    Axios.get(`https://api.soundcloud.com/playlists/201220539?client_id=${this.client_id}`)
+      .then(function (response) {
+
+        _this.setState({songs: response.data.tracks});
+        // Store the length of the tracks
+        const trackLength = response.data.tracks.length;
+        // console.log(trackLength);
+        // Pick a random number
+        const track = response.data.tracks.filter(function(v) {
+          return v.id === key; // Filter out the appropriate one
+        })[0];
+
+        console.log(track);
+        //Set the track state with a track from the playlist
+        _this.setState({track: track});
+
+      })
+      .catch(function (err) {
+        //If something goes wrong, let us know
+        console.log(err);
+      });
+   }
+
   render () {
     const scotchStyle = {
       width: '500px',
@@ -158,7 +184,7 @@ class AppContainer extends React.Component {
           total={this.state.total}
           position={this.state.position}/>
         <Playlist 
-          songs={this.state.songs} />
+          songs={this.state.songs} playlistHandle={this.chooseTrack.bind(this)} />
       </div>
     );
   }
