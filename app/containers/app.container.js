@@ -67,6 +67,7 @@ class AppContainer extends React.Component {
     this.setState({autoCompleteValue: event.target.value});
     let _this = this;
     //Search for song with entered value
+    console.log(value);
     Axios.get(`https://api.soundcloud.com/tracks?client_id=${this.client_id}&q=${value}`)
       .then(function (response) {
         // Update track state
@@ -91,7 +92,7 @@ class AppContainer extends React.Component {
   }
 
   handleSongPlaying(audio){
-     this.setState({  elapsed: this.formatMilliseconds(audio.position),
+     this.setState({elapsed: this.formatMilliseconds(audio.position),
                       total: this.formatMilliseconds(audio.duration),
                       position: audio.position / audio.duration })
    }

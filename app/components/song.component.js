@@ -4,11 +4,16 @@ class Song extends React.Component {
   constructor(props) {
     super(props);
   }
+
+  // handleClick(event) {
+  //   console.log(event.target);
+
+  // }
   render(){
     return(
       <tr className="song">
         <td>
-          {this.props.title}
+          <a onClick={this.props.changeCallback}>{this.props.title}</a>          
         </td>    	
       </tr>
     )
