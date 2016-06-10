@@ -41,7 +41,6 @@ class AppContainer extends React.Component {
   }
   
   xlArtwork(url){
-    console.log(url);
     return url.replace(/large/, 't500x500');
   }
   
@@ -146,7 +145,6 @@ class AppContainer extends React.Component {
     
     chooseTrack(key) {
       let _this = this;
-      console.log()
       //Request for a playlist via Soundcloud using a client id
       Axios.get(`https://api.soundcloud.com/playlists/${this.playlist_id}?client_id=${this.client_id}`)
       .then(function (response) {
