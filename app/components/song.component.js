@@ -1,19 +1,17 @@
 import React from 'react';
+import ClassNames from 'classnames';
+
 
 class Song extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  // handleClick(event) {
-  //   console.log(event.target);
-
-  // }
   render(){
     return(
-      <tr className="song">
+      <tr>
         <td>
-          <a onClick={this.props.changeCallback}>{this.props.title}</a>          
+          <a className="song" onClick={this.props.changeCallback}>{this.props.title}</a>          
         </td>    	
       </tr>
     )

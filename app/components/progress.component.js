@@ -9,9 +9,11 @@ class Progress extends React.Component {
     return(
       <div className="progress">
         <span className="player__time-elapsed">{this.props.elapsed}</span>
+        
         <progress
-           value={this.props.position}
-           max="1"></progress>
+          onClick={this.props.changeCallback}
+          value={this.props.position}
+          max="1"></progress>
          <span className="player__time-total">{this.props.total}</span>
       </div>
     )
