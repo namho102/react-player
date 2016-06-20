@@ -3,12 +3,12 @@
 }
 
 
-body{
+body {
   margin: 0;
   font-family: 'Exo 2', sans-serif;
 }
 
-.scotch_music{
+.scotch_music {
   position: relative;
 }
 
@@ -24,19 +24,19 @@ body{
   padding: 5px;
 }
 
-.details h3{
+.details h3 {
   text-align: center;
   padding: 50px 10px;
   margin: 0;
   color: white;
 }
 
-.player{
+.player {
   text-align: center;
   margin-top: 60px;
 }
 
-.player div{
+.player div {
   display: inline-block;
   margin-left: 10px;
   margin-right: 10px;
@@ -44,7 +44,7 @@ body{
 
 
 
-.player .player__backward button, .player .player__forward button{
+.player .player__backward button, .player .player__forward button {
   background: transparent;
   border: 1px solid rgb(243, 139, 114);
   color: rgb(243, 139, 114);
@@ -55,15 +55,15 @@ body{
   outline: none;
 }
 
-.player .player__backward button{
+.player .player__backward button {
   border-left: none;
 }
 
-.player .player__forward button{
+.player .player__forward button {
   border-right: none;
 }
 
-.player .player__main button:hover, .player .player__backward button:hover, .player .player__forward button:hover{
+.player .player__main button:hover, .player .player__backward button:hover, .player .player__forward button:hover {
   color: rgba(243, 139, 114, 0.7);
   border: 1px solid rgba(243, 139, 114, 0.7);
 }
@@ -82,7 +82,7 @@ body{
   outline: none;
 }
 
-.progress{
+.progress {
   text-align: center;
   margin-top: 100px;
     color: white;
@@ -116,7 +116,7 @@ body{
     background-size: 35px 20px, 100% 100%, 100% 100%;
 }
 
-.footer{
+.footer {
   color: white;
   position: absolute;
   bottom: 0px;
@@ -124,15 +124,15 @@ body{
   background: #524C4C;
 }
 
-.footer p{
+.footer p {
   text-align: center;
 }
 
-.footer .logo{
+.footer .logo {
   height: 25px;
   width: auto;
 }
-.footer .soundcloud{
+.footer .soundcloud {
   height: 25px;
   width: auto;
 }
